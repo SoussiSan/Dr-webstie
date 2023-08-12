@@ -1,0 +1,33 @@
+// main small rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+@media (min-width: 768px) and (max-width: 992px){
+    .profile-container{
+        .content{
+            display: block;
+            .sub-content{
+                width: 99%;
+            }
+        }
+        .first-box{
+            .image-container{
+                width: 40%;
+                .image{
+                    width: 180px;
+                    height: 180px;
+                }
+            }
+            .info-container{
+                width: 60%;
+                .name{
+                    font-size: 22px;
+                    font-weight: 500;
+                }
+            }
+    
+            
+        }
+    }
+}

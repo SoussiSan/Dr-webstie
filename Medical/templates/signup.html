@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<div class="container row mx-auto my-5">
+
+    <form method="POST" novalidate class="col-6 mx-auto" enctype="multipart/form-data">
+        <h1 class="title mx-auto">Regestrations</h1>
+        <div class="py-4 px-5" style="border: 1px solid #1DA1F2; border-radius: 5px">
+            {% csrf_token %}
+            {% include 'includes/form.html' %}
+            <button class="btn btn-success mx-auto my-2" type="submit" style="background-color: #1DA1F2; border: #1DA1F2;">Sign Up</button>
+            <a class="btn btn-success mx-auto my-2" type="submit" href="#" style="background-color: #1DA1F2; border: #1DA1F2; color: white;">Sign In</a>
+        </div>
+
+    </form>
+</div>
+{% endblock %}

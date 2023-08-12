@@ -1,0 +1,68 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: displayOne;
+  font-size: 48px;
+  src: "./fonts/YesevaOne-Regular.ttf";
+}
+@font-face {
+  font-family: displayTow;
+  src: "./fonts/YesevaOne-Regular.ttf";
+  font-size: 32px;
+}
+@font-face {
+  font-family: title;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 26px;
+  font-weight: 550;
+}
+@font-face {
+  font-family: caption;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 18px;
+  font-weight: bold;
+  word-spacing: 22px;
+}
+@font-face {
+  font-family: body;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 16px;
+  font-weight: normal;
+}
+@font-face {
+  font-family: bodyTow;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 18px;
+  font-weight: normal;
+}
+@font-face {
+  font-family: textButton;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 16px;
+  font-weight: 550;
+}
+@font-face {
+  font-family: small;
+  src: "./fonts/WorkSans-VariableFont_wght.ttf";
+  font-size: 14px;
+  font-weight: normal;
+}
+.caption {
+  font-family: caption;
+  color: var(--secondary);
+  letter-spacing: 6px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.title {
+  font-family: displayTow;
+  font-size: 32px;
+  color: var(--primary);
+  font-weight: bold;
+  text-transform: capitalize;
+}/*# sourceMappingURL=main.css.map */

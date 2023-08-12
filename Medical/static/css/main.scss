@@ -1,0 +1,69 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+
+
+
+
+/* --------------------- base styling --------------------- */
+
+.first-nav{
+    background-color: white;
+}
+.icon-top-desc{
+    color: $primary;
+
+}
+.icon-bottom-desc{
+    color: $secondary;
+    display: block !important;
+}
+.icon-desc{
+    display: inline;
+    font-family: textButton;
+
+}
+.one-item, .one-icon, .icon-desc, .icon-descriptions{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+.navbar-nav{
+    width: 100% !important;
+}
+.one-icon {
+    .icon{
+        color: $primary;
+        font-size: 24px;
+    }
+}
+
+/* --------------------- end base styling --------------------- */
+
+
+/* --------------------- start footer styling --------------------- */
+footer{
+    background-color: $primary;
+    color: $accent;
+    .slogan{
+        width: 90%;
+        border-bottom: solid 1px $accent;
+    
+    }
+}
+footer .slogan-content{
+    width: 40%;
+    text-align: left;
+}
+footer .cw{
+    width: 90%;
+    font-size: 12px;
+}
+/* --------------------- end footer styling --------------------- */
+
+/*____________________start signup style____________________*/
+.signup-container{
+    width: 30%;
+}
+/*____________________end signup style____________________*/

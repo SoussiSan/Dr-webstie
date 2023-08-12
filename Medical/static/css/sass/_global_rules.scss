@@ -1,0 +1,131 @@
+@use "./colors" as *;
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+@font-face{
+    font-family: displayOne;
+    font-size: 48px;
+    src: './fonts/YesevaOne-Regular.ttf';
+
+}
+@font-face{
+    font-family: displayTow;
+    src: './fonts/YesevaOne-Regular.ttf';
+    font-size: 32px;
+}
+@font-face{
+    font-family: title;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 26px;
+    font-weight: 550;
+}
+@font-face{
+    font-family: caption;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 18px;
+    font-weight: bold;
+    word-spacing: 22px;
+}
+@font-face{
+    font-family: body;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 16px;
+    font-weight: normal;
+}
+@font-face{
+    font-family: bodyTow;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 18px;
+    font-weight: normal;
+}
+@font-face{
+    font-family: textButton;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 16px;
+    font-weight: 550;
+}
+@font-face{
+    font-family: small;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 14px;
+    font-weight: normal;
+}
+@mixin font($family, $weight, $transform, $size, $color){
+    font-family: $family;
+    font-weight: $weight;
+    text-transform: $transform;
+    font-size: if($size, $size, 16px);
+    color: $color;
+}
+
+.caption{
+    @include font(caption, bold, uppercase, 16px, $secondary);
+    letter-spacing: 6px;
+}
+.title{
+    @include font(displayTow, bold, capitalize, 32px, $primary);
+}
+.display-o{
+    @include font(displaOne, medium, capitalize, 32px, $accent);
+}
+.body-t{
+    @include font(bodyTow, medium, capitalize, 18px, $primary);
+}
+.small-title{
+    @include font(body, medium, capitalize, 32px, $primary);
+}
+.location-frame{
+    width: 100%;
+}
+
+
+
+
+@media (max-width: 767px){
+    .caption{
+        @include font(caption, bold, uppercase, 16px, $secondary);
+        letter-spacing: 6px;
+    }
+    .title{
+        @include font(displayTow, bold, capitalize, 28px, $primary);
+    }
+    .display-o{
+        @include font(displaOne, medium, capitalize, 28px, $accent);
+    }
+    .body-t{
+        @include font(bodyTow, medium, capitalize, 16px, $primary);
+    }
+    .small-title{
+        @include font(body, medium, capitalize, 28px, $primary);
+    }
+    .location-frame{
+        width: 100%;
+    }
+}
+
+
+@media (min-width: 768px) and (max-width: 992px) {
+    .caption{
+        @include font(caption, bold, uppercase, 16px, $secondary);
+        letter-spacing: 6px;
+    }
+    .title{
+        @include font(displayTow, bold, capitalize, 30px, $primary);
+    }
+    .display-o{
+        @include font(displaOne, medium, capitalize, 30px, $accent);
+    }
+    .body-t{
+        @include font(bodyTow, medium, capitalize, 16px, $primary);
+    }
+    .small-title{
+        @include font(body, medium, capitalize, 30px, $primary);
+    }
+    .location-frame{
+        width: 100%;
+    }
+}

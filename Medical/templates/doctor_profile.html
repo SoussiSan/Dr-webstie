@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Dr AISSOUS Noussaiba{% endblock %}
+{% block content %}
+<nav class=" blue-nav navbar navbar-expand-lg navbar-dark position-sticky">
+    <div class="container">
+
+
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link active" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="{% url 'mainpage' %}">Home</a>
+            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+            <a class="nav-link" href="{% url 'appointment' %}">Appointment</a>
+        </div>
+        <div class="navbar-nav ml-auto justify-content-end">
+            {% if user.is_authenticated and user.role == "PATIENT" %}
+            <a class="nav-link text-capitalize" href="{% url 'patient_profile' user.pk %}" id="userMenu" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log out</a>
+            {% elif user.is_authenticated and user.role == "DOCTOR" %}
+            <a class="nav-link" href="{% url 'patients' %}">Patients</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<div class="doctor-profile container-fluid mx-0 my-5">
+    <div class="doctor-description row mx-auto mx-3">
+        <div class="img col-4">
+            <img src="{% static 'img/soussi.png' %}" alt="dr aissous noussaiba">
+        </div>
+        <div class="info col-8 px-3 py-4">
+            <div class="title my-1">
+                Dr AISSOUS Noussaiba
+            </div>
+            <div class="caption my-3">
+                médecin générale
+            </div>
+            <div class="icons row my-5">
+                <div class="icon col-4">
+                    <i class='fab fa-linkedin-in p-2' style="color: white; background-color: #1DA1F2; font-size: 28px; border-radius: 50%"></i>
+                </div>
+                <div class="icon col-4">
+                    <i class='fab fa-facebook-f p-2' style="color: white; background-color: #1DA1F2; font-size: 28px; border-radius: 50%"></i>
+                </div>
+                <div class="icon col-4">
+                    <i class='fab fa-instagram p-2' style="color: white; background-color: #1DA1F2; font-size: 28px; border-radius: 50%"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="about-doctor mx-0 my-5 p-5">
+        <div class="about-doctor-content mx-auto">
+            <div class="title">About Dr AISSOUS</div>
+            <div class="text">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aperiam, autem consequuntur cum, doloremque eaque excepturi fuga fugiat id illum ipsam iste minima modi officia sint soluta tenetur ullam voluptate?
+            </div>
+        </div>
+    </div>
+    <div class="professions mx-auto my-4">
+        <div class="professions-content row">
+            <div class="experience col-6 mx-auto">
+                <div class="small-title py-3">
+                    +25 years of experience
+                </div>
+                <ul class="experience-ul">
+                    <li class="experience-li">MBBS</li>
+                    <li class="experience-li">MD</li>
+                    <li class="experience-li">MRCOG</li>
+                    <li class="experience-li">DFSRH</li>
+                    <li class="experience-li">ART</li>
+                </ul>
+            </div>
+            <div class="skills col-6 mx-auto">
+                <div class="small-title  py-3">
+                    skills
+                </div>
+                <ul class="skills-ul">
+                    <li class="skills-li">MBBS</li>
+                    <li class="skills-li">MD</li>
+                    <li class="skills-li">MRCOG</li>
+                    <li class="skills-li">DFSRH</li>
+                    <li class="skills-li">ART</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container location py-3 mx-auto">
+    <iframe class="mx-auto location-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12857.274720265212!2d6.652774153473743!3d36.328825595219094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f17157cfc96d25%3A0x651e1bf83ad6088a!2sSissaoui%2C%20Constantine!5e0!3m2!1sen!2sdz!4v1691333091582!5m2!1sen!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div id="contact" class="contact container-fluid mx-auto py-5">
+    <div class="titles mx-auto">
+        <div class="caption">get in touch</div>
+        <div class="title">contact</div>
+    </div>
+    <div class="boxes d-flex mx-auto py-3">
+        <div class="first-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-phone icon' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>EMERGENCY</h6>
+                <span>(237) 681-812-255</span>
+                <span>(237) 666-331-894</span>
+            </div>
+        </div>
+        <div class="second-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-map-marker-alt' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>Location</h6>
+                <span>Daksi Constantine, Algeria</span>
+            </div>
+        </div>
+        <div class="third-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-mail-bulk' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>email</h6>
+                <span>draissous@gmail.com</span>
+            </div>
+        </div>
+        <div class="last-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='far fa-clock' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>work hour</h6>
+                <span>All Week Days</span>
+                <span>from 9:00 to 18:00</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

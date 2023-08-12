@@ -1,0 +1,25 @@
+@use "./colors" as *;
+@use "./global_rules" as *;
+
+
+@media (max-width: 767px){
+    .caption{
+        @include font(caption, bold, uppercase, 16px, $secondary);
+        letter-spacing: 6px;
+    }
+    .title{
+        @include font(displayTow, bold, capitalize, 28px, $primary);
+    }
+    .display-o{
+        @include font(displaOne, medium, capitalize, 28px, $accent);
+    }
+    .body-t{
+        @include font(bodyTow, medium, capitalize, 16px, $primary);
+    }
+    .small-title{
+        @include font(body, medium, capitalize, 28px, $primary);
+    }
+    .location-frame{
+        width: 100%;
+    }
+}

@@ -1,0 +1,22 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+@media (max-width: 767px){
+    .appointment{
+        width: 80%;
+        .app-content{
+            display: block;
+            .app-sub-content{
+                width: 85%;
+            }
+        }
+        .appointment-form{
+            padding: 8% !important;
+        }
+        .schedule{
+            width: 85%;
+        }
+    }
+}

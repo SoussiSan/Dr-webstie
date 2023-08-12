@@ -1,0 +1,58 @@
+// main rules
+@use "sass/_global_rules";
+// main small rules
+@use "sass/_global_rules_sm";
+// main colors
+@use "sass/colors" as *;
+
+.profile-container{
+    width: 100%;
+    background-color: $background;
+    .box{
+        background-color: $white;
+        border-radius: 10px;
+    }
+    .first-box{
+        .image-container{
+            .image{
+                border-radius: 50%;
+                width: 200px;
+                height: 200px;
+            }
+        }
+        .info-container{
+            .name{
+                
+                font-size: 24px;
+                text-transform: capitalize;
+                font-weight: 500;
+            }
+            a{
+                color: $accent;
+                text-decoration-line: none;
+            }
+            .icons{
+                color: $primary !important;
+                span{
+                    color: $black;
+                }
+            }
+        }
+
+        
+    }
+    .second-box{
+        .c-div{
+            margin-bottom: 2%;
+            .div-title{
+                color: $black; 
+                text-transform: capitalize;
+                
+                font-weight: bold;
+            }
+            .div-info{
+                color: #9f9f9f;
+            }
+        }
+    }
+}

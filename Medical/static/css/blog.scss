@@ -1,0 +1,25 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+.card{
+    .more-text{
+        display: none;
+    }
+    .show-more{
+        .more-text{
+            display: inline !important;
+        }
+        
+    }
+
+}
+.create-post{
+    background-color: $primary !important;
+    a{
+        background-color: $primary;
+        color: $white;
+        text-decoration: none;
+    }
+}

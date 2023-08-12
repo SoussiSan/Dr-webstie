@@ -1,0 +1,200 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+
+
+
+
+/* --------------------- base styling --------------------- */
+
+.first-nav{
+    background-color: white;
+}
+.icon-top-desc{
+    color: var(--primary);
+
+}
+.icon-bottom-desc{
+    color: var(--secondary);
+    display: block !important;
+}
+.icon-desc{
+    display: inline;
+    font-family: textButton;
+
+}
+.one-item, .one-icon, .icon-desc, .icon-descriptions{
+    padding: 000000000000px !important;
+    margin: 0000000000000000px !important;
+}
+.navbar-nav{
+    width: 100% !important;
+}
+.one-icon .icon{
+    color: var(--primary);
+    font-size: 24px;
+}
+
+/* --------------------- end base styling --------------------- */
+
+/* --------------------- start home styling --------------------- */
+.caption{
+    font-family: caption;
+    color: var(--secondary);
+    letter-spacing: 6px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.title{
+    font-family: displayTow;
+    font-size: 32px;
+    color: var(--primary);
+    font-weight: bold;
+    text-transform: capitalize;
+}
+.display-1{
+    color: var(--primary);
+    font-family: displayOne;
+    font-size: 32px;
+}
+.blue-nav{
+    color: white;
+    background-color: var(--primary);
+    position: sticky !important;
+    position: -webkit-sticky !important;
+}
+.home{
+    background-image: url('/static/img/doctor.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 80vh;
+    position: relative;
+}
+.home .description{
+    width: 40%;
+    position: absolute;
+    left: 20%;
+    top: 30%;
+    transform: translate(-30%, -20%);
+}
+.home .leading-the{
+    font-family: displayOne;
+    color: var(--primary);
+    font-size: 48px;
+    text-transform: capitalize;
+    font-weight: bold;
+}
+.cadrs-container{
+    width: 99%;
+    display: block;
+    position: absolute;
+    bottom: -5%;
+}
+.cadrs{
+    justify-content: space-evenly;
+    width: 70%;
+}
+.cadrs .cadr{
+    background-color: white;
+    width: 30%;
+    padding: 2%;
+    border-radius: 7px;
+    text-align: center;
+    color: white;
+}
+.cadrs .c-first{
+    background-color: var(--primary);
+}
+.cadrs .c-second{
+    background-color: var(--secondary);
+}
+.cadrs .c-last{
+    background-color: var(--accent);
+}
+.cadr .span{
+    width: 80%;
+}
+.cadr .icon{
+    width: 20%;
+    text-align: center;
+    font-size: 28px;
+}
+/* --------------------- end home styling --------------------- */
+/* --------------------- start about us styling --------------------- */
+
+.welcoming{
+    width: 50%;
+    text-align: center;
+}
+.welcoming .welcoming-picture img{
+    width: 100%;
+}
+/* --------------------- end about us styling --------------------- */
+/* --------------------- start services styling --------------------- */
+.our-services{
+    width: 50% !important;
+    text-align: center;
+}
+/* --------------------- end services styling --------------------- */
+/* --------------------- start contact styling --------------------- */
+.contact{
+    width: 100%;
+}
+.contact .titles{
+    width: 50%;
+    text-align: center;
+    
+}
+.contact .boxes{
+    justify-content: space-evenly !important;
+    width: 60%;
+}
+.contact .first-box,
+.contact .third-box,
+.contact .last-box{
+    background-color: var(--accent);
+    color: var(--primary);
+    border-radius: 5px;
+    width: 20%;
+
+}
+.contact .second-box{
+    background-color: var(--primary);
+    color: var(--accent);
+    border-radius: 5px;
+    width: 20%;
+}
+.contact h6{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+/* --------------------- end contact styling --------------------- */
+
+/* --------------------- start footer styling --------------------- */
+footer{
+    background-color: var(--primary);
+    color: var(--accent);
+}
+footer .slogan{
+    width: 90%;
+    border-bottom: solid 1px var(--accent);
+
+}
+footer .slogan-content{
+    width: 40%;
+    text-align: left;
+}
+footer .cw{
+    width: 90%;
+    font-size: 12px;
+}
+/* --------------------- end footer styling --------------------- */
+
+/*____________________start signup style____________________*/
+.signup-container{
+    width: 30%;
+}
+/*____________________end signup style____________________*/

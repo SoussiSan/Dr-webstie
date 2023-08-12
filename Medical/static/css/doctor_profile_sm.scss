@@ -1,0 +1,29 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+
+@media (max-width: 767px){
+    .doctor-profile{
+        .doctor-description{
+            width: 90%;
+        }
+        .about-doctor{
+            .about-doctor-content{
+                width: 80%;
+            }
+        }
+        .professions{
+            width: 90%;
+            .professions-content{
+                display: block !important;
+                .experience,
+                .skills{
+                    width: 60%;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

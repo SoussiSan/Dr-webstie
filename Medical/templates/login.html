@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content  %}
+<form method="POST" class="col-6 mx-auto my-5 py-4" >
+    <h1 class="title mx-auto">Log In</h1>
+    <div class="py-4 px-5" style="border: 1px solid #1DA1F2; border-radius: 5px">
+            {% csrf_token %}
+            {% include 'includes/simple_form.html' %}
+            <button class="btn btn-success mx-auto my-2" type="submit" style="background-color: #1DA1F2; border: #1DA1F2;">Sign In</button>
+            <a class="btn btn-success mx-auto my-2" href="{% url 'signup' %}" style="background-color: #1DA1F2; border: #1DA1F2; color: white;">Sign Up</a>
+    </div>
+</form>
+
+{% endblock %}

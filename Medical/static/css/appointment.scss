@@ -1,0 +1,41 @@
+// main rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+.appointment{
+    width: 70%;
+    .app-title{
+        border-bottom: 1px solid $primary; 
+    }
+    .appointment-form{
+        border: 1px solid $primary;
+        border-radius: 5px;
+    }
+    .schedule{
+        color: $white;
+        background-color: $primary;
+        border-radius: 5px;
+        text-align: center;
+        h2{
+            width: 100%;
+            text-align: center;
+        }
+        table{
+            width: 80%;
+            text-align: center;
+            color: $white !important;
+            border-bottom: 1px solid $accent;
+            tr{
+                td{
+                    padding: 5%;
+                }
+            }
+        }
+
+    }
+    .location{
+        width: 100%;
+        
+    }
+}

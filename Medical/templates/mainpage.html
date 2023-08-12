@@ -1,0 +1,137 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Medical{% endblock %}
+{% block content %}
+<nav class=" blue-nav navbar navbar-expand-lg navbar-dark position-sticky">
+    <div class="container">
+
+        {% if user.is_authenticated and user.role == "DOCTOR" %}
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        {% else %}
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        {% endif %}
+        <div class="navbar-nav mx-auto">
+            <a class="nav-link active" href="{% url 'mainpage' %}">Home</a>
+            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="{% url 'blog' %}">Blog</a>
+            <a class="nav-link" href="{% url 'appointment' %}">Appointment</a>
+        </div>
+        <div class="navbar-nav ml-auto justify-content-end">
+            {% if user.is_authenticated and user.role == "PATIENT" %}
+            <a class="nav-link text-capitalize" href="{% url 'patient_profile' user.pk %}" id="userMenu" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log out</a>
+            {% elif user.is_authenticated and user.role == "DOCTOR" %}
+            <a class="nav-link" href="{% url 'patients' %}">Patients</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+<div class="home container-fluid">
+    <div class="description mx-5">
+        <div class="small-title caption">CARING FOR LIFE</div>
+        <div class="leading-the">leading the way in the medical excellence</div>
+    </div>
+    <div class="cadrs-container mx-auto">
+        <div class="cadrs d-flex mx-auto">
+            <div class="cadr c-first d-flex ">
+                <div class="span">
+                    <span>Book an Appointment</span>
+                </div>
+                <div class="icon">
+                    <i class='fas fa-calendar-alt float-right'></i>
+                </div>
+            </div>
+            <div class="cadr c-second d-flex ">
+                <div class="span">
+                    <span>Ask Doctor</span>
+                </div>
+                <div class="icon">
+                    <i class='fas fa-question float-right'></i>
+                </div>
+            </div>
+            <div class="cadr c-last d-flex ">
+                <div class="span">
+                    <span>Stay Up to Date</span>
+                </div>
+                <div class="icon">
+                    <i class='far fa-newspaper float-right'></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="about-us container-fluid py-3">
+    <div class="welcoming mx-auto py-5">
+        <div class="caption">welcome to my cabinet</div>
+        <div class="title">A great place to recive care</div>
+        <div>
+            This is our cabinet situated in Daksi, Constantine where we give different services to take care of your health in a best way that fits all your expectations
+            our services are : consultaions, radios, free blog to our patients to ask and receive all the answers they need also they can see all the updates about the medical field that intressted them, booking an appointment online from their houses
+        </div>
+        <div class="welcoming-picture mx-auto py-3">
+            <img src="{% static 'img/doctors.jpg' %}" class="my-3">
+        </div>
+    </div>
+
+</div>
+<div class="container location py-3 mx-auto">
+    <iframe class="mx-auto location-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12857.274720265212!2d6.652774153473743!3d36.328825595219094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f17157cfc96d25%3A0x651e1bf83ad6088a!2sSissaoui%2C%20Constantine!5e0!3m2!1sen!2sdz!4v1691333091582!5m2!1sen!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+<div id="contact" class="contact container-fluid mx-auto py-5">
+    <div class="titles mx-auto">
+        <div class="caption">get in touch</div>
+        <div class="title">contact</div>
+    </div>
+    <div class="boxes d-flex mx-auto py-3">
+        <div class="first-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-phone icon' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>EMERGENCY</h6>
+                <span>(237) 681-812-255</span>
+                <span>(237) 666-331-894</span>
+            </div>
+        </div>
+        <div class="second-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-map-marker-alt' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>Location</h6>
+                <span>Daksi Constantine, Algeria</span>
+            </div>
+        </div>
+        <div class="third-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-mail-bulk' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>email</h6>
+                <span>draissous@gmail.com</span>
+            </div>
+        </div>
+        <div class="last-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='far fa-clock' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>work hour</h6>
+                <span>All Week Days</span>
+                <span>from 9:00 to 18:00</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

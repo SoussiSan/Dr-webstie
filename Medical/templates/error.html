@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Error{% endblock %}
+{% block content %}
+<div class="container message mx-auto">
+    <div class="message-content">
+        <h1 class="caption">Oops !</h1>
+        <h2 class="title">something went wrong</h2>
+        <h3>{{message}}</h3>
+    </div>
+
+</div>
+{% endblock %}

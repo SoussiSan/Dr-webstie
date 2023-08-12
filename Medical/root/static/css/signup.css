@@ -1,0 +1,66 @@
+*{
+    margin: 0000000000000000000000000000000000px;
+    padding: 000000000000000000000000000000000000000px;
+    box-sizing: border-box;
+}
+:root {
+  --primary: #1DA1F2;
+  --secondary: #094161;
+  --accent : #BFD2F8;
+  --black : #212124;
+}
+@font-face{
+    font-family: displayOne;
+    font-size: 48px;
+    src: './fonts/YesevaOne-Regular.ttf';
+
+}
+@font-face{
+    font-family: displayTow;
+    src: './fonts/YesevaOne-Regular.ttf';
+    font-size: 32px;
+}
+@font-face{
+    font-family: title;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 26px;
+    font-weight: 550;
+}
+@font-face{
+    font-family: caption;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 18px;
+    font-weight: bold;
+    word-spacing: 22px;
+}
+@font-face{
+    font-family: body;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 16px;
+    font-weight: normal;
+}
+@font-face{
+    font-family: bodyTow;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 18px;
+    font-weight: normal;
+}
+@font-face{
+    font-family: textButton;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 16px;
+    font-weight: 550;
+}
+@font-face{
+    font-family: small;
+    src: './fonts/WorkSans-VariableFont_wght.ttf';
+    font-size: 14px;
+    font-weight: normal;
+}
+
+/*____________________start signup style____________________*/
+.signup-container{
+    width: 30%;
+}
+/*____________________end signup style____________________*/
+

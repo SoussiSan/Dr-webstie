@@ -1,0 +1,84 @@
+// main small rules
+@use "sass/_global_rules";
+// main colors
+@use "sass/colors" as *;
+
+
+@media (min-width: 576px) and (max-width: 767px){
+    
+    /* --------------------- start home styling --------------------- */
+    .home{
+        height: 40vh;
+        .description{
+            width: 55%;
+            left: 20%;
+            top: 30%;
+            transform: translate(-30%, -20%);
+            .leading-the{
+                font-size: 40px;
+            }
+        }
+        .cadrs-container{
+            bottom: -4%;
+            .cadrs{
+                width: 95%;
+                .cadr{
+                    width: 31%;
+                    .span{
+                        width: 85%;
+                        font-size: 15px;
+                    }
+                    .icon{
+                        width: 15%;
+                        font-size: 24px;
+                    }
+                }
+            }
+        }
+    }
+
+    /* --------------------- end home styling --------------------- */
+    /* --------------------- start about us styling --------------------- */
+
+    .welcoming{
+        width: 90%;
+    }
+    /* --------------------- end about us styling --------------------- */
+    /* --------------------- start services styling --------------------- */
+    .our-services{
+        width: 90% !important;
+    }
+    /* --------------------- end services styling --------------------- */
+    /* --------------------- start contact styling --------------------- */
+    .contact{
+        width: 100%;
+        .titles{
+            width: 50%;
+            text-align: center;
+            
+        }
+        .boxes{
+            display: block !important;
+            width: 98%;
+            text-align: center;
+            
+            .first-box,
+            .third-box,
+            .last-box{
+                width: 60%;
+                margin-bottom: 2%;
+            }
+            .second-box{
+                margin-bottom: 2%;
+                width: 60%;
+            }
+        }
+        h6{
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+    }
+    /* --------------------- end contact styling --------------------- */
+
+}

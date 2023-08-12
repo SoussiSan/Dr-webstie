@@ -1,0 +1,166 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Appointment{% endblock %}
+{% block content %}
+<div class="">
+    <nav class=" blue-nav navbar navbar-expand-lg navbar-dark position-sticky">
+    <div class="container">
+
+        {% if user.is_authenticated and user.role == "DOCTOR" %}
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        {% else %}
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        {% endif %}
+        <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="{% url 'mainpage' %}">Home</a>
+            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link active" href="{% url 'appointment' %}">Appointment</a>
+        </div>
+        <div class="navbar-nav ml-auto justify-content-end">
+            {% if user.is_authenticated and user.role == "PATIENT" %}
+            <a class="nav-link text-capitalize" href="{% url 'patient_profile' user.pk %}" id="userMenu" aria-haspopup="true" aria-expanded="false">{{ user.username }}</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log out</a>
+            {% elif user.is_authenticated and user.role == "DOCTOR" %}
+            <a class="nav-link" href="#">Patients</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+            <a class="nav-link" href="{% url 'signup' %}">Sign Up</a>
+            <a class="nav-link" href="{% url 'login' %}">Log In</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+    <div class="appointment mx-auto">
+        <div class="app-title py-3">
+            <div class="body-t">
+                home / appointment
+            </div>
+            <div class="title">
+                Appointment
+            </div>
+        </div>
+        <div class="mx-auto row app-content py-5">
+            <div class="app-sub-content col-6 mx-auto">
+                <div class="description">
+                    <div class="title">
+                        Book an appointment
+                    </div>
+                    <div>
+                        Hello dear patient, we don't wish that by any case, but if you have a health problem and you want to vesit your doctor don't hesitiate to book your appointment now, and we will send you an email with the appropriate details
+                        <br> <i>Dear patient be sure to insert you name and your phone number in the message area</i>
+                    </div>
+                </div>
+                <div class="appointment-form my-4 p-5">
+                    <form method="POST" class="row g-3 needs-validation" novalidate>
+                        {% csrf_token %}
+                        <div class="mb-2">
+                            <label for="exampleFormControlInput1" class="form-label">Email address</label>
+                            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="patient_email">
+                        </div>
+
+                        <div class="mb-2">
+                            <label for="subject" class="form-label">Email subject</label>
+                            <input class="form-control" type="text" placeholder="Email Subject" id="subject" name="subject">
+                        </div>
+                        <div class="mb-2">
+                            <label for="exampleFormControlTextarea1" class="form-label">Email message</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+                        </div>
+                        <button class="btn btn-primary" type="submit">Submit form</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6 schedule p-3 my-4 ml-2 mx-auto">
+                <h2 class="display-o py-4">schedule hours</h2>
+                <table class="mx-auto px-5">
+                    <tr>
+                        <td>Sunday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Monday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Tuesday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Wednesday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Thursday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+                    <tr>
+                        <td>Friday</td>
+                        <td>Closed</td>
+                    </tr>
+                    <tr>
+                        <td>Saturday</td>
+                        <td>09:00 AM - 07:00 PM</td>
+                    </tr>
+
+                </table>
+            </div>
+        </div>
+        <div class="location py-5">
+            <iframe class="location-frame" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12857.274720265212!2d6.652774153473743!3d36.328825595219094!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12f17157cfc96d25%3A0x651e1bf83ad6088a!2sSissaoui%2C%20Constantine!5e0!3m2!1sen!2sdz!4v1691333091582!5m2!1sen!2sdz" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    <div id="contact" class="contact container-fluid mx-auto py-5">
+    <div class="titles mx-auto">
+        <div class="caption">get in touch</div>
+        <div class="title">contact</div>
+    </div>
+    <div class="boxes d-flex mx-auto py-3">
+        <div class="first-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-phone icon' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>EMERGENCY</h6>
+                <span>(237) 681-812-255</span>
+                <span>(237) 666-331-894</span>
+            </div>
+        </div>
+        <div class="second-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-map-marker-alt' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>Location</h6>
+                <span>Daksi Constantine, Algeria</span>
+            </div>
+        </div>
+        <div class="third-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='fas fa-mail-bulk' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>email</h6>
+                <span>draissous@gmail.com</span>
+            </div>
+        </div>
+        <div class="last-box px-4 py-5 mx-auto">
+            <div class="icon py-2">
+                <i class='far fa-clock' style="width: 28px"></i>
+            </div>
+            <div claas="icon-desc">
+                <h6>work hour</h6>
+                <span>All Week Days</span>
+                <span>from 9:00 to 18:00</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}User{% endblock %}
+{% block content %}
+<div class="profile-container ">
+  <div class="container content row  mx-auto">
+    <div class="col-8 mx-auto py-5 sub-content">
+        <div class="first-box box p-4 my-4 row">
+            <div class="image-container col-4">
+                <img class="image" src="../{{user.picture}}" alt="username">
+            </div>
+            <div class="info-container col-8 py-4">
+                <div class="name py-3">{{ user.first_name }} {{ user.last_name }}</div>
+                {% if user.authenticated and user.role == 'PATIENT' %}
+                <a href="{% url 'edit_patient_profile' user.pk %}" class="py-2">
+                    <i class='fas fa-user-edit'></i>
+                    Edit profile
+                </a>
+                {% endif %}
+                <div class="icons py-2">
+                    <i class='fas fa-envelope-open-text'></i> <span>{{ user.email}}</span>&nbsp;
+                    <i class='fas fa-phone icon'></i> <span>{{ user.phone }}</span>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="second-box box p-5 my-2">
+            <div class="c-div row">
+                <div class="gender col-6">
+                    <div class="div-title">gender</div>
+                    <div class="div-info">female</div>
+                </div>
+                <div class="phone col-6">
+                    <div class="div-title">phone</div>
+                    <div class="div-info">{{ user.phone }}</div>
+                </div>
+            </div>
+            <div class="c-div row">
+                <div class="blood col-6">
+                    <div class="div-title">blood group</div>
+                    <div class="div-info">{{ user.patient.blood_group }}</div>
+                </div>
+                <div class="email col-6">
+                    <div class="div-title">email</div>
+                    <div class="div-info">{{ user.email }}</div>
+                </div>
+            </div>
+            <div class="c-div">
+                <div class="div-title">address</div>
+                <div class="div-info">{{ user.first_name }} {% if user.address %} lives in {{ user.address }} {% else %} didn't mention his/her address {% endif %}</div>
+            <div class="c-div">
+                <div class="div-title">description</div>
+                <div class="div-info">
+                    <span class="user-name">{{ user.first_name }} {{ user.last_name }} is a female of {{ user.patient.age }} years old with {{ user.patient.blood_group }} blood group {% if user.patient.allergic_to %} patient is allergic to {{ user.patient.allergic_to }} {% else %} patient is not allergic {% endif %}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Patients{% endblock %}
+{% block content %}
+<nav class=" blue-nav navbar navbar-expand-lg navbar-dark position-sticky">
+    <div class="container">
+
+
+
+        <div class="navbar-nav ms-auto ">
+            <a class="nav-link" href="{% url 'doctor_profile' %}">Doctor</a>
+        </div>
+        <div class="navbar-nav mx-auto">
+            <a class="nav-link" href="{% url 'mainpage' %}">Home</a>
+            <a class="nav-link" href="#">Blog</a>
+            <a class="nav-link" href="{% url 'appointment' %}">Appointment</a>
+        </div>
+        <div class="navbar-nav ml-auto justify-content-end">
+            {% if user.is_authenticated and user.role == "DOCTOR" %}
+            <a class="nav-link active" href="{% url 'patients' %}">Patients</a>
+            <a class="nav-link " href="{% url 'logout' %}">Log Out</a>
+            {% endif %}
+        </div>
+    </div>
+</nav>
+{% for user in users %}
+{% if user.role == 'PATIENT' %}
+<div class="profile-container ">
+  <div class="container content row  mx-auto">
+    <div class="col-8 mx-auto py-5">
+        <div class="first-box box p-4 my-4 row">
+            <div class="image-container col-4">
+                <img class="image" src="../{{user.picture}}" alt="username">
+            </div>
+            <div class="info-container col-8 py-4">
+                <div class="name py-3"><a  href="{% url 'patient_profile' user.id %}">{{ user.first_name }} {{ user.last_name }}</a></div>
+
+                <div class="icons py-2">
+                    <i class='fas fa-envelope-open-text'></i> <span>{{ user.email}}</span>&nbsp;
+                    <i class='fas fa-phone icon'></i> <span>{{ user.phone }}</span>
+                </div>
+            </div>
+
+
+        </div>
+
+</div>
+</div>
+
+{% endif %}
+{% endfor %}
+{% endblock %}

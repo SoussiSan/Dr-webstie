@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+<div class="container mx-auto">
+{% if user.is_authenticated and user.role == 'DOCTOR' %}
+<button class="btn create-post">
+  <a href="{% url 'create_post' %}">New Post</a>
+</button>
+{% endif %}
+{% for post in posts %}
+  <div class="card mb-3 mx-auto" style="max-width: 800px;">
+  <div class="row g-0">
+    {% if post.picture %}
+    <div class="col-md-4">
+      <img src="../{{post.picture}}" class="img-fluid rounded-start" alt="{{ post.title }}">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body box">
+        <h5 class="card-title">{{ post.title }}</h5>
+        {% if post.short_message|length >= post.message|length %}
+        <p class="card-text text">{{ post.message }}</p>
+        {% else %}
+        <p class="card-text text">{{ post.short_message }}
+        <span class="card-text more-text">{{ post.message }}</span>
+        </p>
+
+        <button class="btn read-button">Read More</button>
+        {% endif %}
+
+
+        <p class="card-text"><small class="text-body-secondary">Last updated {% if pos.updated_date %}{{ post.updated_dt }}{% else %}{{ post.created_date }}{% endif %}</small></p>
+      </div>
+    </div>
+    {% else %}
+    <div class="col-md-12">
+      <div class="card-body box">
+        <h5 class="card-title">{{ post.title }}</h5>
+        {% if post.short_message|length >= post.message|length %}
+        <p class="card-text text">{{ post.message }}</p>
+        {% else %}
+        <p class="card-text text">{{ post.short_message }}
+        <span class="card-text more-text">{{ post.message }}</span>
+        </p>
+        <button class="btn read-button">Read More</button>
+        {% endif %}
+        <p class="card-text"><small class="text-body-secondary">Last updated {% if pos.updated_date %}{{ post.updated_dt }}{% else %}{{ post.created_date }}{% endif %}</small></p>
+      </div>
+    </div>
+    {% endif %}
+
+
+  </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
